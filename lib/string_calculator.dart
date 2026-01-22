@@ -1,19 +1,29 @@
 class StringCalculator {
   int add(String numbers) {
-    /// Handle empty string
-    if (numbers.isEmpty) return 0;
+    switch (numbers.length) {
+      case 0:
+        return 0;
+      default:
+        {
+          String delimiter = ',';
+          String workingNumber = numbers;
 
+          if (numbers.startsWith('//')) {
+            delimiter = numbers[2];
+            workingNumber = numbers.substring(4);
+          }
 
-    String delimiter = ',';
-    String workingNumber = numbers;
+          workingNumber = workingNumber.replaceAll('\n', delimiter);
 
-    if (numbers.startsWith('//')) {
-      delimiter = numbers[2];
-      workingNumber = numbers.substring(4);
+          final values = workingNumber.split(delimiter).map(int.parse).toList();
+          final negatives = values.where((e) => e < 0).toList();
+
+          if (negatives.isNotEmpty) {
+            throw Exception('Negative numbers not allowed: ${negatives.join(', ')}');
+          }
+
+          return values.reduce((a, b) => a + b);
+        }
     }
-
-    workingNumber = workingNumber.replaceAll('\n', delimiter);
-
-    return workingNumber.split(delimiter).map(int.parse).reduce((a, b) => a + b);
   }
 }
