@@ -1,2 +1,6 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+##  ###################################################################################################
+
+**This repository contains a Dart implementation of the String Calculator Kata, completed following
+Test Driven Development (TDD) principles, as described in the Incubyte assessment.**
+
+##  ###################################################################################################

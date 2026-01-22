@@ -26,4 +26,7 @@ void main() {
     expect(StringCalculator().add('//;\n1;2'), 3);
   });
 
+  test('negative numbers throw exception', () {
+    expect(() => StringCalculator().add('1,-2,3'), throwsException);
+  });
 }
