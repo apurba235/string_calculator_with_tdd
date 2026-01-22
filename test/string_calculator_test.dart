@@ -14,4 +14,8 @@ void main() {
     expect(StringCalculator().add('1,2'), 3);
   });
 
+  test('multiple numbers supported', () {
+    expect(StringCalculator().add('1,2,3,4'), 10);
+  });
+
 }

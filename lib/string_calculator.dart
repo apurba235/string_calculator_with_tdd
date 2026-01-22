@@ -4,11 +4,9 @@ class StringCalculator {
     if (numbers.isEmpty) return 0;
 
     /// Handle single number
-    final partsOfNumber = numbers.split(',');
-    if (partsOfNumber.length == 1) {
-      return int.parse(partsOfNumber[0]);
-    }
-
-    return int.parse(partsOfNumber[0]) + int.parse(partsOfNumber[1]);
+    return numbers
+        .split(',')
+        .map(int.parse)
+        .reduce((a, b) => a + b);
   }
 }
