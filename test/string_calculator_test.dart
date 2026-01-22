@@ -22,4 +22,8 @@ void main() {
     expect(StringCalculator().add('1\n2,3'), 6);
   });
 
+  test('custom delimiter support', () {
+    expect(StringCalculator().add('//;\n1;2'), 3);
+  });
+
 }
