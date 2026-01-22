@@ -18,4 +18,8 @@ void main() {
     expect(StringCalculator().add('1,2,3,4'), 10);
   });
 
+  test('new line as delimiter', () {
+    expect(StringCalculator().add('1\n2,3'), 6);
+  });
+
 }

@@ -4,9 +4,7 @@ class StringCalculator {
     if (numbers.isEmpty) return 0;
 
     /// Handle single number
-    return numbers
-        .split(',')
-        .map(int.parse)
-        .reduce((a, b) => a + b);
+    final workingNumbers = numbers.replaceAll('\n', ',').split(',');
+    return workingNumbers.map(int.parse).reduce((a, b) => a + b);
   }
 }
