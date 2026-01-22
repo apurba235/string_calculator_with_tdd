@@ -5,4 +5,9 @@ void main() {
   test('empty string returns 0', () {
     expect(StringCalculator().add(''), 0);
   });
+
+  test('single number returns itself', () {
+    expect(StringCalculator().add('5'), 5);
+  });
+
 }
